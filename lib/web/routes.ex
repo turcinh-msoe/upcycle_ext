@@ -4,20 +4,20 @@ defmodule Bonfire.Breadpub.Web.Routes do
     quote do
 
       # pages anyone can view
-      scope "/breadpub", Bonfire.Breadpub do
+      scope "/upcycle", Bonfire.Breadpub do
         pipe_through :browser
 
       end
 
       # pages you need an account to view
-      scope "/breadpub", Bonfire.Breadpub do
+      scope "/upcycle", Bonfire.Breadpub do
         pipe_through :browser
         pipe_through :account_required
 
       end
 
       # VF pages you need to view as a user
-      scope "/breadpub", Bonfire.Breadpub do
+      scope "/upcycle", Bonfire.Breadpub do
         pipe_through :browser
         pipe_through :user_required
 

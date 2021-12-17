@@ -27,7 +27,7 @@ defmodule Bonfire.Breadpub.Web.HomeLive do
       page: "publish",
       action_id: "work",
       intent_type: "need",
-      intent_url: "/breadpub/intent/"
+      intent_url: "/upcycle/intent/"
     )}
   end
 
