@@ -1,7 +1,7 @@
-defmodule Bonfire.Breadpub.Repo.Migrations.ImportMe do
+defmodule Bonfire.Upcycle.Repo.Migrations.ImportMe do
   use Ecto.Migration
 
-  import Bonfire.Breadpub.Migration
+  import Bonfire.Upcycle.Migration
   # accounts & users
 
   def change, do: migrate_me

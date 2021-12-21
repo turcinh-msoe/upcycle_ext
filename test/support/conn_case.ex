@@ -27,7 +27,7 @@ defmodule Bonfire.Upcycle.ConnCase do
       import Bonfire.Upcycle.Test.ConnHelpers
       import Bonfire.Upcycle.Test.FakeHelpers
       alias Bonfire.Upcycle.Fake
-      # alias Bonfire.Breadpub.Web.Router.Helpers, as: Routes
+      # alias Bonfire.Upcycle.Web.Router.Helpers, as: Routes
 
       # The default endpoint for testing
       @endpoint Bonfire.Common.Config.get!(:endpoint_module)

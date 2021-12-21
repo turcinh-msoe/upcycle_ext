@@ -1,4 +1,4 @@
-defmodule Bonfire.Breadpub.Test.ConnHelpers do
+defmodule Bonfire.Upcycle.Test.ConnHelpers do
 
   import ExUnit.Assertions
   import Plug.Conn
