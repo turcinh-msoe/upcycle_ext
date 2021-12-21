@@ -5,7 +5,7 @@ defmodule Bonfire.Breadpub.MixProject do
 
   def project do
     [
-      app: :bonfire_breadpub,
+      app: :bonfire_upcycle,
       version: "0.1.0",
       elixir: "~> 1.10",
       elixirc_paths: elixirc_paths(Mix.env()),

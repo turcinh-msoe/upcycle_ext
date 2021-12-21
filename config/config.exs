@@ -8,7 +8,7 @@ use Mix.Config
 # import_config "bonfire_web_phoenix.exs"
 
 # include all used Bonfire extensions
-import_config "bonfire_breadpub.exs"
+import_config "bonfire_upcycle.exs"
 
 
 #### Basic configuration
