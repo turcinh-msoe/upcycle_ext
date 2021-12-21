@@ -123,7 +123,7 @@ defmodule Bonfire.Upcycle.Web.HomeLive do
         provider: $provider,
         receiver: $receiver,
         status: "open",
-        classified_as: "#{Bonfire.Breadpub.Integration.remote_tag_id}"
+        classified_as: "#{Bonfire.Upcycle.Integration.remote_tag_id}"
       },
       limit: 200
     ) {

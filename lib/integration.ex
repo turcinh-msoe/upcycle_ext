@@ -1,4 +1,4 @@
-defmodule Bonfire.Breadpub.Integration do
+defmodule Bonfire.Upcycle.Integration do
 
   def repo, do: Bonfire.Common.Config.get!(:repo_module)
 

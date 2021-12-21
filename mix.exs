@@ -1,5 +1,5 @@
 Code.eval_file("mess.exs")
-defmodule Bonfire.Breadpub.MixProject do
+defmodule Bonfire.Upcycle.MixProject do
 
   use Mix.Project
 
@@ -25,7 +25,6 @@ defmodule Bonfire.Breadpub.MixProject do
 
   def application do
     [
-      # mod: {Bonfire.Breadpub.FallbackApplication, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

@@ -1,4 +1,4 @@
-defmodule Bonfire.Breadpub.ConnCase do
+defmodule Bonfire.Upcycle.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -23,10 +23,10 @@ defmodule Bonfire.Breadpub.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import Phoenix.LiveViewTest
-      import Bonfire.Breadpub.ConnCase
-      import Bonfire.Breadpub.Test.ConnHelpers
-      import Bonfire.Breadpub.Test.FakeHelpers
-      alias Bonfire.Breadpub.Fake
+      import Bonfire.Upcycle.ConnCase
+      import Bonfire.Upcycle.Test.ConnHelpers
+      import Bonfire.Upcycle.Test.FakeHelpers
+      alias Bonfire.Upcycle.Fake
       # alias Bonfire.Breadpub.Web.Router.Helpers, as: Routes
 
       # The default endpoint for testing
@@ -36,7 +36,7 @@ defmodule Bonfire.Breadpub.ConnCase do
 
   setup tags do
 
-    import Bonfire.Breadpub.Integration
+    import Bonfire.Upcycle.Integration
 
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(repo())
 

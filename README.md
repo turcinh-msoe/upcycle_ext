@@ -1,4 +1,4 @@
-# Bonfire:Breadpub
+# Bonfire:Upcycle
 
 An extension for [Bonfire](https://bonfire.cafe/) that handles:
 
