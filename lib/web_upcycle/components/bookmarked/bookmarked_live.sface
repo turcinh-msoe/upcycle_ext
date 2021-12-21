@@ -1,0 +1,11 @@
+<div class="flex flex-col space-y-2 w-full">
+  <Bonfire.UI.Upcycle.IntentLive />
+  <Bonfire.UI.Upcycle.IntentLive
+      name={"Lumber"}
+      resourceQuantity={50}
+      />
+  <Bonfire.UI.Upcycle.IntentLive
+      name={"Iron"}
+      resourceQuantity={5}
+      />
+</div>
