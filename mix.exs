@@ -5,7 +5,7 @@ defmodule Bonfire.Upcycle.MixProject do
 
   def project do
     [
-      app: :bonfire_upcycle,
+      app: :upcycle_ext,
       version: "0.1.0",
       elixir: "~> 1.10",
       elixirc_paths: elixirc_paths(Mix.env()),
