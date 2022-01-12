@@ -15,7 +15,7 @@
     <div>
       <Label class="block text-sm text-base-content text-opacity-80 font-regular">{l " "}</Label>
       <Label class="block rounded-box text-sm text-base-content text-opacity-80 font-regular text-center">{l "Show expired: "}
-        <Checkbox class="rounded-box"/>
+        <Checkbox/>
       </Label>
     </div>
   </div>
