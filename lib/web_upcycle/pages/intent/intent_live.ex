@@ -47,7 +47,6 @@ defmodule Bonfire.Upcycle.IntentLive do
       note
       due
       finished
-      context: in_scope_of
       resourceQuantity {
         id
         hasNumericalValue
