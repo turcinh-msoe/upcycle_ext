@@ -23,7 +23,7 @@ defmodule Bonfire.Upcycle.Web.HomeLive do
   defp mounted(params, session, socket) do
     {:ok, socket
     |> assign(
-      page_title: "Create a new intent",
+      page_title: "Upcycle",
       page: "publish-offer",
       action_id: "work",
       intent_type: "offer",
@@ -77,7 +77,6 @@ defmodule Bonfire.Upcycle.Web.HomeLive do
      )}
   end
 
-
   def do_handle_params(%{"tab" => "bookmarked" = tab} = _params, _url, socket) do
     current_user = current_user(socket)
 
@@ -89,22 +88,27 @@ defmodule Bonfire.Upcycle.Web.HomeLive do
      )}
   end
 
-
   def do_handle_params(%{"tab" => tab} = _params, _url, socket) do
+    current_user = current_user(socket)
+    intents = intents(socket)
+    IO.inspect(intents)
 
     {:noreply,
      assign(socket,
-       selected_tab: tab,
+        selected_tab: "discover",
+        intents: intents
      )}
   end
 
   def do_handle_params(%{} = _params, _url, socket) do
-
     current_user = current_user(socket)
+    intents = intents(socket)
+    IO.inspect(intents)
 
     {:noreply,
      assign(socket,
-     selected_tab: "",
+        selected_tab: "discover",
+        intents: intents
      )}
   end
 
