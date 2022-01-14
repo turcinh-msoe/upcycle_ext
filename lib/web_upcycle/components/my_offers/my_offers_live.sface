@@ -3,7 +3,7 @@
     <Select class="block w-full rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" options={"Organization": "sortby"}/>
     <div/>
     <div/>
-    <button type="createoffer" class="block w-full btn btn-primary bg-pink-600 border-transparent text-white hover:bg-pink-400">{l "Create a new offer"}</button>
+    <button phx-click="createoffer" class="block w-full btn btn-primary bg-pink-600 border-transparent text-white hover:bg-pink-400">{l "Create a new offer"}</button>
   </div>
  {#for intent <- @intents}
       <Bonfire.UI.Upcycle.IntentLive

@@ -23,23 +23,31 @@
       class="w-full p-2 m-0 rounded-lg shadow-inner bg-base-300"
       name={:name}>
       <Label class="block text-sm text-base-content text-opacity-80 font-regular">{l "Resource I can offer"}</Label>
-      <TextInput class="block w-full rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+      <TextInput class="block w-full rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" opts={placeholder: "TODO: Make this into a drop-down"}/>
     </Field>
-    <Field 
-      class="w-full p-2 m-0 rounded-lg shadow-inner bg-base-300"
-      name={:value}>
-      
-      <Label class="block text-sm text-base-content text-opacity-80 font-regular">{l "Amount I can offer"}</Label>
-      <TextInput class="block w-3/5 rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
-    </Field>
-    <Field 
-      class="w-full p-2 m-0 rounded-lg shadow-inner bg-base-300"
-      name={:expiration}>
+
+    <Inputs for={:resource_quantity}>
+      <div class="w-full p-2 m-0 rounded-lg shadow-inner bg-base-300">
+        <Label class="block text-sm text-base-content text-opacity-80 font-regular">{l "Amount I can offer"}</Label>
+        <div class="grid grid-cols-3 gap-1">
+          <Field name={:has_numerical_value} class="w-full">
+            <NumberInput opts={placeholder: "00.00"} class="w-full rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+          </Field>
+          <Field name={:has_unit} class="w-full">
+              <Select options={"TODO Units": "TODO"} class="w-full rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+          </Field>
+        </div>
+      </div>
+    </Inputs>
+
+    <div class="w-full p-2 m-0 rounded-lg shadow-inner bg-base-300">
       <Label class="block text-sm text-base-content text-opacity-80 font-regular">{l "Offer Expires"}</Label>
-      <Select class="w-2/5 rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" options={"January": "jan", "February": "feb", "March": "mar", "April": "apr", "May": "may", "June": "jun", "July": "jul", "August": "aug", "September": "sep", "November": "nov", "December": "dec"}/>
-      <TextInput class="w-1/4 rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="Day"/>
-      <TextInput class="w-1/4 rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="Year"/>
-    </Field>
+      <Field name={:due}>
+        <DateTimeLocalInput name="due" class="w-full"/>
+      </Field>
+    </div>
+    
+
     <Field
       name={:note}
       class="w-full p-2 rounded-lg shadow-inner bg-base-300">
