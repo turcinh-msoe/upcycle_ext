@@ -14,7 +14,7 @@
   </div>
 
   <main class="flex flex-col items-center mx-auto mt-4">
-    <section class="p-3 mb-4 bg-white rounded-lg shadow dark:bg-blueGray-700 w-center">
+    <section class="p-3 mb-4 bg-white rounded-lg shadow dark:bg-blueGray-700 w-cente r">
       <div class="flex items-start space-x-2">
         {#if @intent.is_offer}
         <span class="flex rounded-box px-2 py-1 w-1/6 bg-pink-600 border-1 text-white justify-center">
