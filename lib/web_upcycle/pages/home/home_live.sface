@@ -5,6 +5,10 @@
     <Bonfire.UI.Upcycle.CreateIntentLive 
       intent_url={@intent_url}
       action_id={"work"} 
+      {#match "publish-need"}
+    <Bonfire.UI.Upcycle.CreateNeedLive 
+      intent_url={@intent_url}
+      action_id={"work"} 
       intent_type={@intent_type} />
     {#match "discover"}
     <Bonfire.UI.Upcycle.DiscoverLive
