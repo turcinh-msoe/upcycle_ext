@@ -1,4 +1,4 @@
-defmodule Bonfire.UI.Upcycle.CreateIntentLive do
+defmodule Bonfire.UI.Upcycle.CreateOfferLive do
   use Bonfire.Web, :stateless_component
 
   prop intent_url, :string, required: false, default: ""

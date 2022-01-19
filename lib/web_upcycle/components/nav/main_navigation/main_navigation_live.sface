@@ -9,9 +9,9 @@
     </li> 
     <li class={"bordered": @page == "my-offers"}>
       <LivePatch  to={"/upcycle/my-offers"}>{l "My offers"}</LivePatch>
-    </li> 
+    </li>
     <li class={"bordered": @page == "bookmarked"}>
       <LivePatch  to={"/upcycle/bookmarked"}>{l "Bookmarked"}</LivePatch>
-    </li> 
+    </li>
   </ul>
 </div>
