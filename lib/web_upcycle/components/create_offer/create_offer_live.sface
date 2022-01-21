@@ -23,14 +23,14 @@
       class="w-full p-2 m-0 rounded-lg shadow-inner bg-base-300"
       name={:name}>
       <Label class="block text-sm text-base-content text-opacity-80 font-regular">{l "Resource I can offer"}</Label>
-      <TextInput class="block w-full rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" opts={placeholder: "TODO: Make this into a drop-down"}/>
+      <TextInput opts={placeholder: "TODO: Make this into a drop-down", required: true} class="block w-full rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
     </Field>
     <Inputs for={:resource_quantity}>
       <div class="w-full p-2 m-0 rounded-lg shadow-inner bg-base-300">
         <Label class="block text-sm text-base-content text-opacity-80 font-regular">{l "Amount I can offer"}</Label>
         <div class="grid grid-cols-3 gap-1">
           <Field name={:has_numerical_value} class="w-full">
-            <NumberInput opts={placeholder: "00.00"} class="w-full rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+            <NumberInput opts={placeholder: "00.00", min: 1, required: true} class="w-full rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
           </Field>
           <Field name={:has_unit} class="w-full">
               <Select options={"TODO units": "todo"} class="w-full rounded-box text-base-content focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
@@ -41,7 +41,7 @@
     <div class="w-full p-2 m-0 rounded-lg shadow-inner bg-base-300">
       <Label class="block text-sm text-base-content text-opacity-80 font-regular">{l "Offer Expires"}</Label>
       <Field name={:due}>
-        <DateTimeLocalInput name="due" class="block w-full text-base-content rounded-box focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+        <DateTimeLocalInput name="due" opts={required: true} class="block w-full text-base-content rounded-box focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
       </Field>
     </div>
     <Field

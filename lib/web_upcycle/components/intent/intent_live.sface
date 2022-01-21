@@ -18,7 +18,7 @@
   </div>
   <div class="flex justify-self-end">
     <LiveRedirect class="text-xs tracking-wide text-base-content text-opacity-80 hover:underline font-regular" to={path(e(@intent, :provider, nil))}>
-      {e(@intent, :provider, :name, "Unnamed Org")}
+      TODO Org ({e(@intent, :provider, :name, "Unnamed Org")})
     </LiveRedirect> 
     <span class="text-xs tracking-wide text-base-content text-opacity-80 font-regular"> - TODO Location</span>
     <span class="text-xs tracking-wide text-base-content text-opacity-80 font-regular"> - {date_from_now(@intent)}</span>
