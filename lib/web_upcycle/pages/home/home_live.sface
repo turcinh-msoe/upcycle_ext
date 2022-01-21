@@ -2,15 +2,15 @@
   <Bonfire.UI.Upcycle.MainNavigationLive page={@selected_tab} />
   {#case @selected_tab}
     {#match "publish-offer"}
-    <Bonfire.UI.Upcycle.CreateIntentLive 
+    <Bonfire.UI.Upcycle.CreateOfferLive 
       intent_url={@intent_url}
       action_id={"work"} 
-      intent_type={@intent_type} />
+      intent_type={"offer"} />
       {#match "publish-need"}
       <Bonfire.UI.Upcycle.CreateNeedLive 
       intent_url={@intent_url}
       action_id={"work"} 
-      intent_type={@intent_type} />
+      intent_type={"need"} />
     {#match "discover"}
     <Bonfire.UI.Upcycle.DiscoverLive
       intents={@intents}
@@ -22,7 +22,5 @@
     <Bonfire.UI.Upcycle.MyOffersLive  intents={@intents} />
     {#match "bookmarked"}
     <Bonfire.UI.Upcycle.BookmarkedLive />
-    {#match _}
-    <Bonfire.UI.Upcycle.CreateIntentLive />
   {/case}
 </main>
