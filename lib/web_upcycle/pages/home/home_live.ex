@@ -23,23 +23,12 @@ defmodule Bonfire.Upcycle.Web.HomeLive do
   defp mounted(params, session, socket) do
     {:ok, socket
     |> assign(
-      page_title: "Create a new intent",
+      page_title: "Upcycle",
       page: "publish-offer",
       action_id: "work",
       intent_type: "offer",
       intent_url: "/upcycle/intent/"
     )}
-  end
-
-
-
-  def do_handle_params(%{"tab" => "publish-offer" = tab} = _params, _url, socket) do
-    current_user = current_user(socket)
-
-    {:noreply,
-     assign(socket,
-       selected_tab: tab,
-     )}
   end
 
   def do_handle_params(%{"tab" => "discover" = tab} = _params, _url, socket) do
@@ -77,7 +66,6 @@ defmodule Bonfire.Upcycle.Web.HomeLive do
      )}
   end
 
-
   def do_handle_params(%{"tab" => "bookmarked" = tab} = _params, _url, socket) do
     current_user = current_user(socket)
 
@@ -89,8 +77,8 @@ defmodule Bonfire.Upcycle.Web.HomeLive do
      )}
   end
 
-
-  def do_handle_params(%{"tab" => tab} = _params, _url, socket) do
+  def do_handle_params(%{"tab" => "publish-offer" = tab} = _params, _url, socket) do
+    current_user = current_user(socket)
 
     {:noreply,
      assign(socket,
@@ -98,13 +86,36 @@ defmodule Bonfire.Upcycle.Web.HomeLive do
      )}
   end
 
-  def do_handle_params(%{} = _params, _url, socket) do
-
+  def do_handle_params(%{"tab" => "inventory" = tab} = _params, _url, socket) do
     current_user = current_user(socket)
 
     {:noreply,
      assign(socket,
-     selected_tab: "",
+       selected_tab: tab,
+     )}
+  end
+
+  def do_handle_params(%{"tab" => tab} = _params, _url, socket) do
+    current_user = current_user(socket)
+    intents = intents(socket)
+    IO.inspect(intents)
+
+    {:noreply,
+     assign(socket,
+        selected_tab: "discover",
+        intents: intents
+     )}
+  end
+
+  def do_handle_params(%{} = _params, _url, socket) do
+    current_user = current_user(socket)
+    intents = intents(socket)
+    IO.inspect(intents)
+
+    {:noreply,
+     assign(socket,
+        selected_tab: "discover",
+        intents: intents
      )}
   end
 
@@ -114,18 +125,15 @@ defmodule Bonfire.Upcycle.Web.HomeLive do
     end)
   end
 
-
-
   @graphql """
   query($provider: ID, $receiver: ID) {
     intents(
       filter:{
         provider: $provider,
         receiver: $receiver,
-        status: "open",
-        classified_as: "#{Bonfire.Upcycle.Integration.remote_tag_id}"
+        status: "open"
       },
-      limit: 200
+      limit: 100
     ) {
         id
         name
@@ -135,6 +143,9 @@ defmodule Bonfire.Upcycle.Web.HomeLive do
           name
           id
           display_username
+        }
+        resourceQuantity {
+          hasNumericalValue
         }
         receiver {
           name
